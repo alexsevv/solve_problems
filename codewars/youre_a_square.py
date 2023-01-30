@@ -25,8 +25,8 @@ def is_square(n):
 
 
 def test_is_squar():
-    assert is_square(-1) == False
-    assert is_square(0) == True
-    assert is_square(3) == False
-    assert is_square(4) == True
-    assert is_square(25) == True
+    assert is_square(-1) is False
+    assert is_square(0) is True
+    assert is_square(3) is False
+    assert is_square(4) is True
+    assert is_square(25) is True
