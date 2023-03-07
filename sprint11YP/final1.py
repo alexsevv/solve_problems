@@ -1,3 +1,4 @@
+# id успешной посылки: 83308932
 # https://contest.yandex.ru/contest/23390/problems/A/
 # https://github.com/alexsevv/solve_problems/blob/main/sprint11YP/final1.py
 """

@@ -1,3 +1,4 @@
+# id успешной посылки: 83579419
 # https://contest.yandex.ru/contest/23390/problems/B/
 """
 B. Ловкость рук
