@@ -1,4 +1,4 @@
-# id успешной посылки: 83579419
+# id успешной посылки: 83579419 | 83622084
 # https://contest.yandex.ru/contest/23390/problems/B/
 """
 B. Ловкость рук
@@ -71,8 +71,8 @@ def get_max_points(matrix: List[str], k: int) -> int:
 
 def read_input() -> Tuple[List[str], int]:
     k = int(input())
-    matrix = [i for i in range(4) for i in input().strip()]
-    return matrix, k
+    input_list = [i for i in range(4) for i in input().strip()]
+    return input_list, k
 
 
 def main():

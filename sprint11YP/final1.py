@@ -1,4 +1,4 @@
-# id успешной посылки: 83308932
+# id успешной посылки: 83308932 | 83621963
 # https://contest.yandex.ru/contest/23390/problems/A/
 # https://github.com/alexsevv/solve_problems/blob/main/sprint11YP/final1.py
 """
@@ -54,13 +54,13 @@ from typing import List, Tuple
 
 
 def zero_dists(start, sequence):
-    d = start
+    start_point = start
     for n in sequence:
         if n == '0':
-            d = 0
+            start_point = 0
         else:
-            d += 1
-        yield d
+            start_point += 1
+        yield start_point
 
 
 def read_input() -> Tuple[List[int], int]:
