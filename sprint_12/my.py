@@ -1,5 +1,8 @@
-import sys
-sys.getsizeof(42)  # => 28 байт занимает короткое целое число
-sys.getsizeof([])  # => 56 байт занимает пустой массив
-sys.getsizeof([42])  # => 64 = (56 + 8) байт занимает массив с одним элементом.
-sys.getsizeof([1,2,3,4,5,6,7,8,9,10])
+x1 = int(input())
+y1 = int(input())
+x2 = int(input())
+y2 = int(input())
+if abs(x1 - x2) == abs(y1 - y2) or x1 == x2 or y1 == y2:
+    print('YES')
+else:
+    print('NO')
