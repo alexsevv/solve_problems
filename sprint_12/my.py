@@ -1,8 +1,14 @@
-x1 = int(input())
-y1 = int(input())
-x2 = int(input())
-y2 = int(input())
-if abs(x1 - x2) == abs(y1 - y2) or x1 == x2 or y1 == y2:
-    print('YES')
+from math import sqrt
+
+
+a, b, c = float(input()), float(input()), float(input())
+
+d = (b ** 2) - (4 * a * c)
+
+sol1 = (-b-sqrt(d))/(2*a)
+sol2 = (-b+sqrt(d))/(2*a)
+if abs(sol2) == abs(sol1):
+    print(sol2)
 else:
-    print('NO')
+    print(sol1)
+    print(sol2)
