@@ -1,4 +1,4 @@
-# номер успешной посылки 84186973
+# номер успешной посылки 84186973, После рефакторинга: 84333195. P.s: почемуто я не проходил по времени из-за вывода ошибки в raize. 
 # https://contest.yandex.ru/contest/23759/problems/A/
 """
 Гоша реализовал структуру данных Дек, максимальный размер которого
@@ -54,7 +54,7 @@ class MaxItemsException(Exception):
         pass
 
 
-class Deck:
+class Deque:
     def __init__(self, max_size):
         self._array = [None] * max_size
         self._max_size = max_size
@@ -72,50 +72,50 @@ class Deck:
 
     def push_back(self, value):
         if self.is_full:
-            raise MaxItemsException
-        else:
-            self._tail = (self._tail + 1) % self._max_size
-            self._array[self._tail] = value
-            self._size += 1
+            raise MaxItemsException("Дек переполнен")
+
+        self._tail = (self._tail + 1) % self._max_size
+        self._array[self._tail] = value
+        self._size += 1
 
     def push_front(self, value):
         if self.is_full:
-            raise MaxItemsException
-        else:
-            self._head = (self._head - 1) % self._max_size
-            self._array[self._head] = value
-            self._size += 1
+            raise MaxItemsException("Дек переполнен")
+
+        self._head = (self._head - 1) % self._max_size
+        self._array[self._head] = value
+        self._size += 1
 
     def pop_back(self):
         if self.is_empty:
-            raise NoItemsException
-        else:
-            value = self._array[self._tail]
-            self._tail = (self._tail - 1) % self._max_size
-            self._size -= 1
-            return value
+            raise NoItemsException("Дек пуст")
+
+        value = self._array[self._tail]
+        self._tail = (self._tail - 1) % self._max_size
+        self._size -= 1
+        return value
 
     def pop_front(self):
         if self.is_empty:
-            raise NoItemsException
-        else:
-            value = self._array[self._head]
-            self._head = (self._head + 1) % self._max_size
-            self._size -= 1
-            return value
+            raise NoItemsException("Дек пуст")
+
+        value = self._array[self._head]
+        self._head = (self._head + 1) % self._max_size
+        self._size -= 1
+        return value
 
 
 def main():
-    n, max_size = int(input()), int(input())
-    deck = Deck(max_size)
+    commands_count, max_size = int(input()), int(input())
+    deque = Deque(max_size)
 
-    for _ in range(n):
+    for _ in range(commands_count):
         try:
             item = input().split(' ')
             if len(item) == 1:
-                print(getattr(deck, item[0])())
+                print(getattr(deque, item[0])())
             else:
-                getattr(deck, item[0])(item[1])
+                getattr(deque, item[0])(item[1])
         except (NoItemsException, MaxItemsException):
             print('error')
 

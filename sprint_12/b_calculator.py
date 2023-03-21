@@ -1,4 +1,4 @@
-# номер успешной посылки 84312559
+# номер успешной посылки: 84312559, После рефакторинга: 84331593
 # https://contest.yandex.ru/contest/23759/problems/B/
 """
 B. Калькулятор
@@ -82,4 +82,9 @@ def calculator(lst):
     return stack.pop()
 
 
-print(calculator(input().split()))
+def main():
+    print(calculator(input().split()))
+
+
+if __name__ == '__main__':
+    main()
